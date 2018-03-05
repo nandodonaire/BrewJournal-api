@@ -1,9 +1,9 @@
-class BreweriesController < ApplicationController
+class BreweriesController < ProtectedController
   before_action :set_brewery, only: [:show, :update, :destroy]
 
   # GET /breweries
   def index
-    @breweries = Brewery.all
+    @breweries = current_user.breweries.all
 
     render json: @breweries
   end
@@ -15,7 +15,7 @@ class BreweriesController < ApplicationController
 
   # POST /breweries
   def create
-    @brewery = Brewery.new(brewery_params)
+    @brewery = current_user.breweries.build(brewery_params)
 
     if @brewery.save
       render json: @brewery, status: :created, location: @brewery
@@ -41,7 +41,7 @@ class BreweriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_brewery
-      @brewery = Brewery.find(params[:id])
+      @brewery = current_user.breweries.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
