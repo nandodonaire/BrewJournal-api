@@ -9,6 +9,7 @@ curl "http://localhost:4741/breweries" \
     "brewery": {
       "name": "'"${NAME}"'",
       "location": "'"${LOCATION}"'",
+      "visited": "'"${VISITED}"'",
       "beers_tasted": "'"${BEERS}"'",
       "notes": "'"${NOTES}"'"
     }
