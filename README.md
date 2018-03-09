@@ -16,6 +16,20 @@ User Stories:
 
 ERD: https://drive.google.com/file/d/1pcRL9oQTfKYJLvoLh7bc2EmT-enoKtWb/view
 
+API End-points:
+
+| HTTP Verb | URI Pattern         | Controller#Action   |
+|--------|------------------------|---------------------|
+| post   | `/sign-up`             | `Users#signup`      |
+| post   | `/sign-in`             | `Users#signin`      |
+| delete | `/sign-out/`           | `Users#signout`     |
+| patch  | `/change-password/`    | `Users#changepw`    |
+| post   | `/breweries`           | `Breweries#create`  |
+| get    | `/breweries/`          | `Breweries#index`   |
+| get    | `/breweries/:id`       | `Breweries#show`    |
+| delete | `/breweries/:id`       | `Breweries#destroy` |
+| patch  | `/breweries/:id`       | `Breweries#update`  |
+
 Features to add in the future:
 
 1) The ability to add a second resourse (beers) that has a relationship to a brewery.
