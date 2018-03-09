@@ -2,7 +2,7 @@ BrewJournal-client
 
 BrewJournal is a full-stack web application that allows users to keep track of breweries they have visited, list the beers they've tried, and add notes about their experience at the brewery. BrewJournal allows users to save a list of breweries as well as additional information about each brewery to a relational database built using Ruby on Rails.
 
-I got the idea for this project because I love craft beer and visiting breweries and wanted a way to keep track of the breweries I've visited. 
+I got the idea for this project because I love craft beer and visiting breweries and wanted a way to keep track of the breweries I've visited.
 
 Technologies Used for API: Ruby on Rails and Heroku
 
@@ -16,6 +16,20 @@ User Stories:
 
 ERD: https://drive.google.com/file/d/1pcRL9oQTfKYJLvoLh7bc2EmT-enoKtWb/view
 
+API End-points:
+
+| HTTP Verb | URI Pattern         | Controller#Action   |
+|--------|------------------------|---------------------|
+| post   | `/sign-up`             | `Users#signup`      |
+| post   | `/sign-in`             | `Users#signin`      |
+| delete | `/sign-out/`           | `Users#signout`     |
+| patch  | `/change-password/`    | `Users#changepw`    |
+| post   | `/breweries`           | `Breweries#create`  |
+| get    | `/breweries/`          | `Breweries#index`   |
+| get    | `/breweries/:id`       | `Breweries#show`    |
+| delete | `/breweries/:id`       | `Breweries#destroy` |
+| patch  | `/breweries/:id`       | `Breweries#update`  |
+
 Features to add in the future:
 
 1) The ability to add a second resourse (beers) that has a relationship to a brewery.
@@ -26,3 +40,7 @@ Features to add in the future:
 Links to Client:
 GitHub Repo - https://github.com/nandodonaire/BrewJournal-client
 Deployed Client - https://nandodonaire.github.io/BrewJournal-client/
+
+Links to API:
+GitHub Repo - https://github.com/nandodonaire/BrewJournal-api
+Deployed API - https://brewjournal.herokuapp.com/
